@@ -1,9 +1,4 @@
-/* ===========================
-   APEX FITNESS WATCH — CSS
-   Mobile-first, pure CSS
-=========================== */
 
-/* --- RESET & VARIABLES --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -43,12 +38,11 @@ body {
   overflow-x: hidden;
 }
 
-/* --- SCROLLBAR --- */
+
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
-/* --- UTILITIES --- */
 .container {
   width: 100%;
   max-width: 1160px;
@@ -79,7 +73,6 @@ body {
   color: var(--accent);
 }
 
-/* --- BUTTONS --- */
 .btn {
   display: inline-block;
   font-family: var(--font-body);
@@ -130,9 +123,7 @@ body {
 
 .btn-full { width: 100%; text-align: center; }
 
-/* ===========================
-   HEADER
-=========================== */
+
 #header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -189,7 +180,6 @@ body {
 }
 .nav-cta:hover { background: #ff5555 !important; }
 
-/* Hamburger */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -211,7 +201,6 @@ body {
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile menu */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -242,9 +231,6 @@ body {
 }
 .mobile-menu a:hover { color: var(--accent); }
 
-/* ===========================
-   HERO
-=========================== */
 .hero {
   position: relative;
   min-height: 100svh;
@@ -256,7 +242,7 @@ body {
   overflow: hidden;
 }
 
-/* Background grid lines */
+
 .hero-bg-lines {
   position: absolute;
   inset: 0;
@@ -288,7 +274,6 @@ body {
   z-index: 1;
 }
 
-/* Hero text */
 .hero-eyebrow {
   font-size: 0.7rem;
   font-weight: 700;
@@ -355,7 +340,6 @@ body {
   background: var(--border);
 }
 
-/* Watch illustration */
 .hero-visual {
   position: relative;
   width: 220px;
@@ -510,7 +494,6 @@ body {
   to { opacity: 1; }
 }
 
-/* Scroll hint */
 .hero-scroll-hint {
   position: absolute;
   bottom: 28px;
@@ -539,15 +522,12 @@ body {
   50% { transform: rotate(45deg) translateY(4px); }
 }
 
-/* ===========================
-   FEATURES
-=========================== */
+
 .features {
   padding: 80px 0;
   background: var(--dark);
 }
 
-/* Tabs */
 .tabs-wrap { width: 100%; }
 
 .tab-buttons {
@@ -623,9 +603,6 @@ body {
   line-height: 1.7;
 }
 
-/* ===========================
-   PRICING
-=========================== */
 .pricing {
   padding: 80px 0;
   background: var(--black);
@@ -735,9 +712,6 @@ body {
   color: var(--muted);
 }
 
-/* ===========================
-   TESTIMONIALS
-=========================== */
 .testimonials {
   padding: 80px 0;
   background: var(--dark);
@@ -851,9 +825,7 @@ body {
   transform: scale(1.2);
 }
 
-/* ===========================
-   SIGNUP
-=========================== */
+
 .signup {
   padding: 80px 0;
   background: var(--black);
@@ -926,9 +898,6 @@ body {
 }
 .form-success.visible { display: block; }
 
-/* ===========================
-   FOOTER
-=========================== */
 .footer {
   background: var(--dark);
   border-top: 1px solid var(--border);
@@ -1000,9 +969,7 @@ body {
 }
 .footer-legal a:hover { color: var(--white); }
 
-/* ===========================
-   ANIMATIONS (on scroll)
-=========================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -1013,9 +980,7 @@ body {
   transform: none;
 }
 
-/* ===========================
-   HERO ENTRANCE ANIMATIONS
-=========================== */
+/* HERO ENTRANCE ANIMATIONS */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(32px); }
   to   { opacity: 1; transform: translateY(0); }
