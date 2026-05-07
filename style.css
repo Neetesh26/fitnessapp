@@ -1014,6 +1014,287 @@ body {
 }
 
 /* ===========================
+   HERO ENTRANCE ANIMATIONS
+=========================== */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Hero text stagger */
+.hero-eyebrow  { animation: fade-up 0.7s ease both; animation-delay: 0.1s; }
+.hero-headline { animation: fade-up 0.8s ease both; animation-delay: 0.25s; }
+.hero-sub      { animation: fade-up 0.7s ease both; animation-delay: 0.45s; }
+.hero-actions  { animation: fade-up 0.7s ease both; animation-delay: 0.6s; }
+.hero-stats    { animation: fade-up 0.7s ease both; animation-delay: 0.75s; }
+
+/* Watch visual slides in from right */
+.hero-visual   { animation: slide-in-right 1s cubic-bezier(0.22,1,0.36,1) both; animation-delay: 0.4s; }
+
+/* Scroll hint fades in late */
+.hero-scroll-hint { animation: fade-in 1s ease both; animation-delay: 1.4s; }
+
+/* ===========================
+   WATCH FLOAT ANIMATION
+=========================== */
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+  50%       { transform: translate(-50%, -50%) translateY(-10px); }
+}
+.watch-body {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ===========================
+   SECTION TITLE UNDERLINE SWIPE
+=========================== */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+.section-title em {
+  position: relative;
+  display: inline-block;
+}
+.section-title em::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.section-title.underline-active em::after {
+  width: 100%;
+}
+
+/* ===========================
+   FEATURE CARD HOVER GLOW
+=========================== */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,60,60,0.08) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.feature-card:hover::before { opacity: 1; }
+
+/* Icon bounce on card hover */
+.feature-card:hover .feat-icon {
+  animation: icon-bounce 0.5s cubic-bezier(0.36,0.07,0.19,0.97);
+}
+@keyframes icon-bounce {
+  0%,100% { transform: translateY(0) scale(1); }
+  30%      { transform: translateY(-8px) scale(1.15); }
+  60%      { transform: translateY(2px) scale(0.95); }
+}
+
+/* ===========================
+   PLAN CARD SHINE SWEEP
+=========================== */
+.plan-card {
+  overflow: hidden;
+}
+.plan-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.04) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.plan-card:hover::after { left: 160%; }
+
+/* Featured plan pulse border */
+@keyframes border-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px var(--accent), 0 20px 60px rgba(255,60,60,0.15); }
+  50%       { box-shadow: 0 0 0 2px var(--accent), 0 20px 80px rgba(255,60,60,0.28); }
+}
+.plan-card.featured {
+  animation: border-pulse 3s ease-in-out infinite;
+}
+
+/* ===========================
+   TESTIMONIAL CARD REVEAL
+=========================== */
+@keyframes testi-enter {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.testi-card { animation: testi-enter 0.5s ease both; }
+
+/* ===========================
+   NAV LINK UNDERLINE HOVER
+=========================== */
+.nav-links a:not(.nav-cta) {
+  position: relative;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+.nav-links a:not(.nav-cta):hover::after { width: 100%; }
+
+/* ===========================
+   BUTTON RIPPLE
+=========================== */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  transform: scale(0);
+  animation: ripple-expand 0.55s linear;
+  pointer-events: none;
+}
+@keyframes ripple-expand {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ===========================
+   STAT NUMBERS COUNT-UP FLASH
+=========================== */
+@keyframes count-flash {
+  0%   { color: var(--accent); transform: scale(1.2); }
+  100% { color: var(--white);  transform: scale(1); }
+}
+.stat-num.flash { animation: count-flash 0.4s ease forwards; }
+
+/* ===========================
+   FORM INPUT FOCUS GLOW
+=========================== */
+.signup-form input {
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.signup-form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(255,60,60,0.15);
+}
+
+/* ===========================
+   FOOTER LINK SLIDE
+=========================== */
+.footer-links a {
+  display: inline-block;
+  transition: color var(--transition), transform var(--transition);
+}
+.footer-links a:hover {
+  color: var(--white);
+  transform: translateX(4px);
+}
+
+/* ===========================
+   SECTION FADE-IN BACKDROP
+=========================== */
+@keyframes section-glow-in {
+  from { background-position: 100% 50%; }
+  to   { background-position: 0% 50%; }
+}
+
+/* Tab button active indicator slide */
+.tab-buttons {
+  position: relative;
+}
+.tab-btn {
+  position: relative;
+  z-index: 1;
+}
+.tab-indicator {
+  position: absolute;
+  top: 6px;
+  height: calc(100% - 12px);
+  background: var(--accent);
+  border-radius: 6px;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+/* ===========================
+   LOGO GLITCH ON HOVER
+=========================== */
+@keyframes glitch-1 {
+  0%,100% { clip-path: inset(0 0 90% 0); transform: translateX(-3px); }
+  50%      { clip-path: inset(0 0 90% 0); transform: translateX(3px); }
+}
+@keyframes glitch-2 {
+  0%,100% { clip-path: inset(70% 0 0 0); transform: translateX(3px); }
+  50%      { clip-path: inset(70% 0 0 0); transform: translateX(-3px); }
+}
+.logo {
+  position: relative;
+}
+.logo::before,
+.logo::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+}
+.logo:hover::before {
+  opacity: 0.7;
+  animation: glitch-1 0.3s steps(2) infinite;
+}
+.logo:hover::after {
+  opacity: 0.5;
+  animation: glitch-2 0.3s steps(2) infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===========================
    RESPONSIVE — TABLET (≥ 640px)
 =========================== */
 @media (min-width: 640px) {

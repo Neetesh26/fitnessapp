@@ -259,6 +259,103 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ─────────────────────────────────────────────
+  // 6A. BUTTON RIPPLE
+  // ─────────────────────────────────────────────
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height) * 1.5;
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.cssText = `
+        width: ${size}px; height: ${size}px;
+        left: ${e.clientX - rect.left - size/2}px;
+        top:  ${e.clientY - rect.top  - size/2}px;
+      `;
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+
+  // ─────────────────────────────────────────────
+  // 6B. FEATURE CARD MOUSE-GLOW (spotlight)
+  // ─────────────────────────────────────────────
+  document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width  * 100).toFixed(1);
+      const y = ((e.clientY - r.top)  / r.height * 100).toFixed(1);
+      card.style.setProperty('--mx', x + '%');
+      card.style.setProperty('--my', y + '%');
+    });
+  });
+
+
+  // ─────────────────────────────────────────────
+  // 6C. SECTION TITLE UNDERLINE ON SCROLL
+  // ─────────────────────────────────────────────
+  const titleObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('underline-active');
+        titleObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('.section-title').forEach(el => {
+    titleObserver.observe(el);
+  });
+
+
+  // ─────────────────────────────────────────────
+  // 6D. TAB INDICATOR PILL (sliding underline)
+  // ─────────────────────────────────────────────
+  const tabWrap = document.querySelector('.tab-buttons');
+  if (tabWrap) {
+    const indicator = document.createElement('div');
+    indicator.className = 'tab-indicator';
+    tabWrap.appendChild(indicator);
+
+    function moveIndicator(btn) {
+      indicator.style.left  = btn.offsetLeft + 'px';
+      indicator.style.width = btn.offsetWidth + 'px';
+    }
+
+    const activeBtn = tabWrap.querySelector('.tab-btn.active');
+    if (activeBtn) moveIndicator(activeBtn);
+
+    tabWrap.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => moveIndicator(btn));
+    });
+  }
+
+
+  // ─────────────────────────────────────────────
+  // 6E. LOGO GLITCH — set data-text attribute
+  // ─────────────────────────────────────────────
+  document.querySelectorAll('.logo').forEach(el => {
+    el.setAttribute('data-text', el.textContent);
+  });
+
+
+  // ─────────────────────────────────────────────
+  // 6F. STAT NUMBER FLASH ON SCROLL
+  // ─────────────────────────────────────────────
+  const statNums = document.querySelectorAll('.stat-num');
+  const statObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('flash');
+        statObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 1 });
+  statNums.forEach(n => statObserver.observe(n));
+
+
+  // ─────────────────────────────────────────────
   // 6. SCROLL REVEAL
   // ─────────────────────────────────────────────
   const revealEls = document.querySelectorAll(
