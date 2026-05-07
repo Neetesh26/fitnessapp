@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX — Smart Fitness Watch</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">APEX<span class="logo-dot">.</span></a>
+      <nav id="nav">
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#signup" class="nav-cta">Get Yours</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#features" class="mobile-link">Features</a></li>
+      <li><a href="#pricing" class="mobile-link">Pricing</a></li>
+      <li><a href="#testimonials" class="mobile-link">Reviews</a></li>
+      <li><a href="#signup" class="mobile-link">Get Yours</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-lines"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Next-Gen Wearable · 2025</p>
+        <h1 class="hero-headline">
+          <span class="line1">BUILT</span>
+          <span class="line2">FOR THE</span>
+          <span class="line3 accent">RELENTLESS</span>
+        </h1>
+        <p class="hero-sub">
+          Track every heartbeat. Own every session.<br>
+          The APEX Watch is engineered for athletes who settle for nothing.
+        </p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-primary">Shop Now</a>
+          <a href="#features" class="btn btn-ghost">See Features</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">14</span><span class="stat-label">Day Battery</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">50m</span><span class="stat-label">Water Resist</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">60+</span><span class="stat-label">Sport Modes</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="watch-ring ring-3"></div>
+        <div class="watch-ring ring-2"></div>
+        <div class="watch-ring ring-1"></div>
+        <div class="watch-body">
+          <div class="watch-screen">
+            <div class="watch-time">09:41</div>
+            <div class="watch-date">THU, 7 MAY</div>
+            <div class="watch-bpm">
+              <span class="bpm-icon">♥</span>
+              <span class="bpm-val">142 BPM</span>
+            </div>
+            <div class="watch-bar-wrap">
+              <div class="watch-bar" style="--w:78%"></div>
+              <div class="watch-bar" style="--w:55%"></div>
+              <div class="watch-bar" style="--w:90%"></div>
+            </div>
+          </div>
+          <div class="watch-crown"></div>
+          <div class="watch-btn-top"></div>
+          <div class="watch-btn-bot"></div>
+        </div>
+        <div class="watch-band band-top"></div>
+        <div class="watch-band band-bot"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">WHAT IT DOES</div>
+      <h2 class="section-title">Engineered for<br><em>Every Edge</em></h2>
+
+      <!-- Tabs for interactive component -->
+      <div class="tabs-wrap">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="health" role="tab">Health</button>
+          <button class="tab-btn" data-tab="performance" role="tab">Performance</button>
+          <button class="tab-btn" data-tab="connectivity" role="tab">Connectivity</button>
+        </div>
+
+        <div class="tab-panels">
+          <div class="tab-panel active" id="tab-health">
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feat-icon">❤️</div>
+                <h3>ECG Heart Monitor</h3>
+                <p>Medical-grade electrocardiogram readings available right on your wrist. Detect irregularities before they escalate.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feat-icon">🫁</div>
+                <h3>SpO2 + Breathing</h3>
+                <p>24/7 blood oxygen tracking combined with guided breathing sessions to reduce stress and improve recovery.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feat-icon">😴</div>
+                <h3>Sleep Architecture</h3>
+                <p>Deep, REM, and light sleep stages mapped nightly. Wake up to a full recovery score every morning.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-performance">
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feat-icon">🏃</div>
+                <h3>Live Pace Coach</h3>
+                <p>Real-time cadence, stride length, and pace feedback during runs so you always hit your target zone.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feat-icon">⚡</div>
+                <h3>VO2 Max Estimate</h3>
+                <p>Track aerobic capacity improvements over weeks and months with lab-calibrated VO2 Max testing.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feat-icon">🏋️</div>
+                <h3>Auto Workout Detection</h3>
+                <p>APEX recognizes 60+ activities automatically. Just move — it records sets, reps, and rest periods for you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-panel" id="tab-connectivity">
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feat-icon">📡</div>
+                <h3>GPS + GLONASS</h3>
+                <p>Multi-system satellite connectivity for pinpoint accuracy on trails, roads, and open water.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feat-icon">📱</div>
+                <h3>Smart Notifications</h3>
+                <p>Calls, texts, and app alerts delivered silently to your wrist. Reply with quick responses on the go.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feat-icon">💳</div>
+                <h3>Contactless Pay</h3>
+                <p>Leave your wallet at home. APEX supports NFC payments at millions of locations worldwide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-label">CHOOSE YOUR BUILD</div>
+      <h2 class="section-title">Pick Your <em>APEX</em></h2>
+      <div class="pricing-grid">
+
+        <div class="plan-card">
+          <div class="plan-tag">Essential</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount">199</span>
+          </div>
+          <p class="plan-desc">The perfect entry point into the APEX ecosystem.</p>
+          <ul class="plan-features">
+            <li>Heart Rate + SpO2 Monitor</li>
+            <li>7-Day Battery Life</li>
+            <li>30m Water Resistance</li>
+            <li>30 Sport Modes</li>
+            <li>Smart Notifications</li>
+            <li class="muted">ECG Monitor</li>
+            <li class="muted">Built-in GPS</li>
+            <li class="muted">Contactless Pay</li>
+          </ul>
+          <a href="#signup" class="btn btn-outline">Order Essential</a>
+        </div>
+
+        <div class="plan-card featured">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-tag">Pro</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount">299</span>
+          </div>
+          <p class="plan-desc">Full-spectrum health and performance, unleashed.</p>
+          <ul class="plan-features">
+            <li>ECG + Heart Rate + SpO2</li>
+            <li>14-Day Battery Life</li>
+            <li>50m Water Resistance</li>
+            <li>60+ Sport Modes</li>
+            <li>Smart Notifications</li>
+            <li>Built-in GPS + GLONASS</li>
+            <li>Contactless Pay</li>
+            <li>Sleep Architecture</li>
+          </ul>
+          <a href="#signup" class="btn btn-primary">Order Pro</a>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-tag">Elite</div>
+          <div class="plan-price">
+            <span class="currency">$</span>
+            <span class="amount">449</span>
+          </div>
+          <p class="plan-desc">Titanium build. Sapphire glass. No compromises.</p>
+          <ul class="plan-features">
+            <li>Everything in Pro</li>
+            <li>Titanium + Sapphire Glass</li>
+            <li>21-Day Battery Life</li>
+            <li>100m Water Resistance</li>
+            <li>Offline Maps + Navigation</li>
+            <li>Solar Charging</li>
+            <li>Priority Support</li>
+            <li>Lifetime Warranty</li>
+          </ul>
+          <a href="#signup" class="btn btn-outline">Order Elite</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-label">REAL ATHLETES. REAL RESULTS.</div>
+      <h2 class="section-title">They Don't <em>Look Back</em></h2>
+      <div class="testi-slider-wrap">
+        <div class="testi-track" id="testiTrack">
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"I've worn every major fitness watch on the market. APEX blew them all away — the ECG accuracy is insane and the battery lasts my entire marathon training week without a charge."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="--c:#FF6B35">JR</div>
+              <div>
+                <strong>Jordan Rivera</strong>
+                <span>Marathon Runner · 3x Boston Qualifier</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"The sleep tracking changed how I approach recovery. I used to overtrain constantly. Now my APEX tells me exactly when to push and when to rest. My PRs have gone through the roof."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="--c:#00C9A7">MK</div>
+              <div>
+                <strong>Maya Krishnan</strong>
+                <span>CrossFit Athlete · Level 2 Coach</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Swam with it in the ocean, ran in the rain, wore it through two-a-days for three months straight. Not a single issue. The build quality is on another level entirely."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="--c:#845EF7">TC</div>
+              <div>
+                <strong>Tyler Chen</strong>
+                <span>Triathlete · Ironman Finisher</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="testi-stars">★★★★☆</div>
+            <p class="testi-quote">"I was skeptical of the VO2 Max readings but my sports doctor confirmed they're spot-on. The live pace coach alone has shaved 4 minutes off my half-marathon time in 6 weeks."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" style="--c:#F72585">SM</div>
+              <div>
+                <strong>Sara Müller</strong>
+                <span>Recreational Runner · Cycling Enthusiast</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="testi-controls">
+          <button class="testi-prev" id="testiPrev" aria-label="Previous">&#8592;</button>
+          <div class="testi-dots" id="testiDots"></div>
+          <button class="testi-next" id="testiNext" aria-label="Next">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL SIGNUP -->
+  <section class="signup" id="signup">
+    <div class="container">
+      <div class="signup-inner">
+        <div class="signup-text">
+          <div class="section-label">EARLY ACCESS</div>
+          <h2 class="section-title">Get <em>$30 Off</em><br>Your First Order</h2>
+          <p>Join 40,000+ athletes on the APEX waitlist. Be first to unlock launch pricing and limited colorways.</p>
+        </div>
+        <form class="signup-form" id="signupForm" novalidate>
+          <div class="form-group">
+            <input type="text" id="nameInput" placeholder="Your name" autocomplete="name" />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="emailInput" placeholder="Your email address" autocomplete="email" />
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Claim My $30 Off →</button>
+          <p class="form-note">No spam. Unsubscribe anytime.</p>
+          <div class="form-success" id="formSuccess">
+            <span>🎉</span> You're on the list! Check your inbox for a confirmation.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">APEX<span class="logo-dot">.</span></a>
+          <p>Engineered for those who demand more. Designed for the relentless pursuit of peak performance.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Compare</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 APEX Wearables Inc. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
